@@ -20,3 +20,7 @@ def create_solution_file_from_template(day_number: int):
 def create_input_file(day_number: int):
     input_file = Path(__file__).parent / "days" / f"{day_number}" / "input.txt"
     input_file.touch()
+
+
+def get_rows(data: str):
+    return data.strip().split("\n")
