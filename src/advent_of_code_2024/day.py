@@ -15,7 +15,6 @@ def main(argv: Optional[list[str]] = None) -> int:
         print(f"Error: Day must be between 1 and 25, got {args.day}")
         return 1
 
-    # Here you can add logic to run the specific day's solution
     print(f"Running solution for day {args.day}")
     try:
         # Import the solution module for the specified day
@@ -25,7 +24,6 @@ def main(argv: Optional[list[str]] = None) -> int:
 
         # Run the solution's main function
         solution_module.main()
-        return 0
     except ImportError:
         print(f"Error: No solution found for day {args.day}")
         return 1
