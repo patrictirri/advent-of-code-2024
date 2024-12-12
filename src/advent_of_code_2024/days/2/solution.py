@@ -56,4 +56,23 @@ def part_one(data: str, test_run: bool = False):
 
 def part_two(data: str, test_run: bool = False):
     print_part(2, test_run)
-    pass
+    reports = get_rows(data)
+    safe_reports = 0
+
+    for report in reports:
+        levels = [int(x) for x in report.split(" ")]
+
+        for i in range(len(levels)):
+            test_levels = levels[:i] + levels[i + 1 :]
+
+            pairs = zip(test_levels, test_levels[1:])
+            is_ascending = all(a < b and abs(b - a) <= 3 for a, b in pairs)
+
+            pairs = zip(test_levels, test_levels[1:])
+            is_descending = all(a > b and abs(a - b) <= 3 for a, b in pairs)
+
+            if is_ascending or is_descending:
+                safe_reports += 1
+                break
+
+    return safe_reports
