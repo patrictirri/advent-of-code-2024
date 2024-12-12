@@ -1,5 +1,7 @@
 import os
 
+from advent_of_code_2024.utils import print_part
+
 
 def main():
     INPUT = os.path.join(os.path.dirname(__file__), "input.txt")
@@ -16,13 +18,6 @@ def main():
 
     print(part_two(test, True))
     print(part_two(data))
-
-
-def print_part(part: int, test_run: bool = False):
-    string = f"Part {part}"
-    if test_run:
-        string += " (test)"
-    print(string)
 
 
 def part_one(data: str, test_run: bool = False):

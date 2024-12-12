@@ -24,3 +24,10 @@ def create_input_file(day_number: int):
 
 def get_rows(data: str):
     return data.strip().split("\n")
+
+
+def print_part(part: int, test_run: bool = False):
+    string = f"Part {part}"
+    if test_run:
+        string += " (test)"
+    print(string)
