@@ -26,6 +26,20 @@ def get_rows(data: str):
     return data.strip().split("\n")
 
 
+def create_grid(rows: list[str]):
+    grid = {}
+    grid_height = len(rows)
+    grid_width = len(rows[0]) if rows else 0
+
+    for y, row in enumerate(rows):
+        for x, cell in enumerate(row):
+            grid[(x, y)] = (cell, (x, y))
+
+    grid["height"] = grid_height
+    grid["width"] = grid_width
+    return grid
+
+
 def print_part(part: int, test_run: bool = False):
     string = f"Part {part}"
     if test_run:
