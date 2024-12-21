@@ -1,6 +1,6 @@
 import os
 
-from advent_of_code_2024.utils import print_part
+from advent_of_code_2024.utils import print_part, timer
 
 
 def main():
@@ -20,11 +20,13 @@ def main():
     # print(part_two(data))
 
 
+@timer
 def part_one(data: str, test_run: bool = False):
     print_part(1, test_run)
     pass
 
 
+@timer
 def part_two(data: str, test_run: bool = False):
     print_part(2, test_run)
     pass

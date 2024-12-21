@@ -1,4 +1,6 @@
+import time
 from datetime import datetime
+from functools import wraps
 from pathlib import Path
 
 
@@ -45,3 +47,15 @@ def print_part(part: int, test_run: bool = False):
     if test_run:
         string += " (test)"
     print(string)
+
+
+def timer(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        start_time = time.time()
+        result = func(*args, **kwargs)
+        end_time = time.time()
+        print(f"Execution time: {(end_time - start_time)*1000:.2f} ms")
+        return result
+
+    return wrapper
