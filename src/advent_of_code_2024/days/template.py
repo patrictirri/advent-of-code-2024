@@ -11,13 +11,13 @@ def main():
     test = """"""
 
     print(part_one(test, True))
-    print(part_one(data))
+    # print(part_one(data))
 
     # Part 2 test
     # test = """"""
 
-    print(part_two(test, True))
-    print(part_two(data))
+    # print(part_two(test, True))
+    # print(part_two(data))
 
 
 def part_one(data: str, test_run: bool = False):
