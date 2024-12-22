@@ -9,14 +9,22 @@ def main():
         data = f.read()
 
     test = """"""
-
-    print(part_one(test, True))
+    expected_part_one = None  # Replace with expected test result
+    result = part_one(test, True)
+    if expected_part_one is not None:
+        assert (
+            result == expected_part_one
+        ), f"Part 1 test failed: got {result}, expected {expected_part_one}"
+    print(result)
     # print(part_one(data))
 
     # Part 2 test
     # test = """"""
-
-    # print(part_two(test, True))
+    # expected_part_two = None  # Replace with expected test result
+    # result = part_two(test, True)
+    # if expected_part_two is not None:
+    #     assert result == expected_part_two, f"Part 2 test failed: got {result}, expected {expected_part_two}"
+    # print(result)
     # print(part_two(data))
 
 
