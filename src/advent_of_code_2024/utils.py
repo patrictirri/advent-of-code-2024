@@ -43,9 +43,9 @@ def create_grid(rows: list[str]):
 
 
 def print_part(part: int, test_run: bool = False):
-    string = f"Part {part}"
-    if test_run:
-        string += " (test)"
+    print()
+    test = " (test)" if test_run else ""
+    string = f"--- Part {part}{test} ---"
     print(string)
 
 

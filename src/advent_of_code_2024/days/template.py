@@ -15,8 +15,8 @@ def main():
         assert (
             result == expected_part_one
         ), f"Part 1 test failed: got {result}, expected {expected_part_one}"
-    print(result)
-    # print(part_one(data))
+    print("Test result:", result)
+    # print("Result:", part_one(data))
 
     # Part 2 test
     # test = """"""
@@ -24,8 +24,9 @@ def main():
     # result = part_two(test, True)
     # if expected_part_two is not None:
     #     assert result == expected_part_two, f"Part 2 test failed: got {result}, expected {expected_part_two}"
-    # print(result)
-    # print(part_two(data))
+    # print("Result:", result)
+    # print("Test result:", part_two(data))
+    print()
 
 
 @timer
