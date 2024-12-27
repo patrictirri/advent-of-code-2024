@@ -31,16 +31,10 @@ p=9,5 v=-3,-3"""
     print("Result:", part_one(data))
 
     # Part 2 test
-    # test = """"""
-    # expected_part_two = None  # Replace with expected test result
-    # result = part_two(test, True)
-    # if expected_part_two is not None:
-    #     assert result == expected_part_two, f"Part 2 test failed: got {result}, expected {expected_part_two}"
-    # print(result)
-    # print(part_two(data))
+    print("Result:", part_two(data))
 
 
-@dataclass
+@dataclass(frozen=True)
 class Coordinate:
     x: int
     y: int
@@ -105,4 +99,29 @@ def part_one(data: str, test_run: bool = False):
 @timer
 def part_two(data: str, test_run: bool = False):
     print_part(2, test_run)
-    pass
+    rows = get_rows(data)
+    bathroom_width = 101
+    bathroom_height = 103
+
+    robots = []
+    for row in rows:
+        pos, vel = row.split()
+        pos_x, pos_y = pos.split("=")[1].split(",")
+        vel_x, vel_y = vel.split("=")[1].split(",")
+        robots.append(
+            Robot(Coordinate(int(pos_x), int(pos_y)), Velocity(int(vel_x), int(vel_y)))
+        )
+
+    seconds = 0
+    while True:
+        seconds += 1
+        for robot in robots:
+            robot.position = Coordinate(
+                (robot.position.x + robot.velocity.x) % bathroom_width,
+                (robot.position.y + robot.velocity.y) % bathroom_height,
+            )
+
+        if len(set(robot.position for robot in robots)) == len(robots):
+            break
+
+    return seconds
